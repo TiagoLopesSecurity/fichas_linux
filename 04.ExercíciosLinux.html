@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body {
+            background-color: black;
+            color: white;
+            font-family: Arial, sans-serif;
+        }
+        pre {
+            background-color: #333;
+            border-left: 4px solid #00ff00; /* Verde para destacar */
+            padding: 10px;
+            overflow-x: auto; /* Adiciona rolagem horizontal se necessário */
+        }
+        h2 {
+            color: #00ff00; /* Verde para os títulos */
+        }
+
+        h1 {
+            color: #ffffff;
+            
+        }
+    </style>
+</head>
+<body>
+<center>
+<h1>04.ExercíciosLinux</h1>
+</center>
+<h2>1. Qual é a pasta em que está?</h2>
+<pre>pwd
+/home/h3ll
+</pre>
+
+<h2>2. Liste os conteúdos da pasta. O que vê?</h2>
+<pre>
+ls -l
+total 40
+drwxr-xr-x 2 h3ll h3ll 4096 Oct  5 15:19 Desktop
+drwxr-xr-x 2 h3ll h3ll 4096 Oct  5 15:19 Documents
+drwxr-xr-x 2 h3ll h3ll 4096 Oct 21 06:20 Downloads
+drwxrwxr-x 4 h3ll h3ll 4096 Oct  6 09:32 HTB
+drwxr-xr-x 2 h3ll h3ll 4096 Oct  5 15:19 Music
+drwxr-xr-x 2 h3ll h3ll 4096 Oct  5 15:19 Pictures
+drwxr-xr-x 2 h3ll h3ll 4096 Oct  5 15:19 Public
+drwxr-xr-x 2 h3ll h3ll 4096 Oct  5 15:19 Templates
+drwxr-xr-x 2 h3ll h3ll 4096 Oct  5 15:19 Videos
+-rw-rw-r-- 1 h3ll h3ll    0 Oct 10 04:51 test.txt
+drwxrwxr-x 2 h3ll h3ll 4096 Oct  6 11:26 tools
+</pre>
+
+<h2>3. Utilizando o parâmetro -a do comando anterior, liste novamente os conteúdos. O que vê agora e porquê?</h2>
+<pre>
+ls -la
+total 168
+drwx------ 19 h3ll h3ll  4096 Oct 21 13:49 .
+drwxr-xr-x  3 root root  4096 Oct  5 15:21 ..
+drwx------  5 h3ll h3ll  4096 Oct  6 10:02 .BurpSuite
+-rw-r--r--  1 h3ll h3ll   220 Oct  5 15:21 .bash_logout
+-rw-r--r--  1 h3ll h3ll  5551 Oct  5 15:21 .bashrc
+-rw-r--r--  1 h3ll h3ll  3526 Oct  5 15:21 .bashrc.original
+drwxrwxr-x 14 h3ll h3ll  4096 Oct 21 06:23 .cache
+drwxr-xr-x 21 h3ll h3ll  4096 Oct 21 13:47 .config
+-rw-r--r--  1 h3ll h3ll 11759 Oct  5 15:21 .face
+lrwxrwxrwx  1 h3ll h3ll     5 Oct  5 15:21 .face.icon -> .face
+-rw-rw-r--  1 h3ll h3ll   279 Oct 21 13:47 .gtkrc-2.0
+drwxr-xr-x  4 h3ll h3ll  4096 Oct  6 09:59 .java
+drwxr-xr-x  4 h3ll h3ll  4096 Oct  5 15:18 .local
+drwx------  4 h3ll h3ll  4096 Oct  5 15:24 .mozilla
+-rw-r--r--  1 h3ll h3ll   807 Oct  5 15:21 .profile
+drwx------  2 h3ll h3ll  4096 Oct  6 11:14 .ssh
+-rw-r--r--  1 h3ll h3ll     0 Oct  6 08:36 .sudo_as_admin_successful
+-rw-------  1 h3ll h3ll   817 Oct  6 09:09 .viminfo
+-rw-rw-r--  1 h3ll h3ll   215 Oct  6 11:26 .wget-hsts
+-rw-------  1 h3ll h3ll 24882 Oct 21 06:13 .xsession-errors
+-rw-------  1 h3ll h3ll  1786 Oct 21 06:23 .zsh_history
+-rw-r--r--  1 h3ll h3ll 10868 Oct  5 15:21 .zshrc
+drwxr-xr-x  2 h3ll h3ll  4096 Oct  5 15:19 Desktop
+drwxr-xr-x  2 h3ll h3ll  4096 Oct  5 15:19 Documents
+drwxr-xr-x  2 h3ll h3ll  4096 Oct 21 06:20 Downloads
+drwxrwxr-x  4 h3ll h3ll  4096 Oct  6 09:32 HTB
+drwxr-xr-x  2 h3ll h3ll  4096 Oct  5 15:19 Music
+drwxr-xr-x  2 h3ll h3ll  4096 Oct  5 15:19 Pictures
+drwxr-xr-x  2 h3ll h3ll  4096 Oct  5 15:19 Public
+drwxr-xr-x  2 h3ll h3ll  4096 Oct  5 15:19 Templates
+drwxr-xr-x  2 h3ll h3ll  4096 Oct  5 15:19 Videos
+-rw-rw-r--  1 h3ll h3ll     0 Oct 10 04:51 test.txt
+drwxrwxr-x  2 h3ll h3ll  4096 Oct  6 11:26 tools
+</pre>
+
+<h2>4. Crie um ficheiro chamado myfile.txt. Que permissões tem este ficheiro e quem é o dono?</h2>
+<pre>
+touch myfile.txt
+ls -ls -la myfile.txt
+-rw-rw-r-- 1 h3ll h3ll 0 Oct 21 14:03 myfile.txt
+</pre>
+
+<h2>5. Utilizando os programas nano ou vi, abra o ficheiro myfile.txt e escreva algo. Guarde o ficheiro e verifique a sua alteração.</h2>
+<pre>
+nano myfile.txt
+cat myfile.txt
+ola
+</pre>
+
+<h2>6. Revogue a permissão de escrita do ficheiro e tente editá-lo novamente. O que acontece?</h2>
+<pre>
+chmod -w myfile.txt
+ls -la myfile.txt
+-r--r--r-- 1 h3ll h3ll 4 Oct 21 14:05 myfile.txt
+</pre>
+
+<h2>7. Crie uma cópia do ficheiro chamada myotherfile.txt na mesma pasta.</h2>
+<pre>
+cp myfile.txt myotherfile.txt
+cat myotherfile.txt
+ola
+</pre>
+
+<h2>8. Adicione permissão de escrita a ambos os ficheiros.</h2>
+<pre>
+chmod +w myfile.txt
+chmod +w myotherfile.txt
+</pre>
+
+<h2>9. Altere o texto no ficheiro myotherfile.txt.</h2>
+<pre>
+nano myotherfile.txt
+</pre>
+
+<h2>10. Visualize os conteúdos dos dois ficheiros no mesmo comando.</h2>
+<pre>
+cat myfile.txt; cat myotherfile.txt
+</pre>
+
+<h2>11. Junte os dois ficheiros num arquivo (tarball) chamado myfiles.tar.</h2>
+<pre>
+tar -cvf myfiles.tar myfile.txt myotherfile.txt
+</pre>
+
+<h2>12. Crie uma pasta chamada ESTIG na sua pasta home.</h2>
+<pre>
+mkdir ESTIG
+</pre>
+
+<h2>13. Mova o arquivo myfiles.tar para a nova pasta e elimine os ficheiros originais.</h2>
+<pre>
+mv myfiles.tar ESTIG
+rm myfile.txt; rm myotherfile.txt
+ls -la ESTIG
+total 20
+drwxrwxr-x  2 h3ll h3ll  4096 Oct 21 14:36 .
+drwx------ 19 h3ll h3ll  4096 Oct 21 14:37 ..
+-rw-rw-r--  1 h3ll h3ll 10240 Oct 21 14:32 myfiles.tar
+</pre>
+
+<h2>14. Mude de directoria para ESTIG.</h2>
+<pre>
+cd ESTIG
+</pre>
+
+<h2>15. Verifique o tamanho do arquivo myfiles.tar.</h2>
+<pre>
+ls -la myfiles.tar
+-rw-rw-r-- 1 h3ll h3ll 10240 Oct 21 14:32 myfiles.tar
+</pre>
+
+<h2>16. Comprima o arquivo utilizando gzip, verificando novamente o tamanho do ficheiro resultante. O que observa?</h2>
+<pre>
+gzip myfiles.tar
+ls
+myfiles.tar.gz
+</pre>
+
+<h2>17. Utilizando o comando para obter a data no formato AAAA-MM-DD, escreva essa data para um ficheiro ESTIG.txt.</h2>
+<pre>
+date +"%Y-%m-%d" > ESTIG.txt
+cat ESTIG.txt
+2024-10-21
+</pre>
+
+<h2>18. Utilizando o comando de identificação do utilizador, adicione o seu username ao ficheiro ESTIG.txt.</h2>
+<pre>
+whoami >> ESTIG.txt
+cat ESTIG.txt
+2024-10-21
+h3ll
+</pre>
+
+<h2>19. Remova o intervalo de linha do ficheiro, substituindo-o por um espaço.</h2>
+<pre>
+fiz a mao
+</pre>
+
+<h2>20. Utilizando o programa nano ou vi, anote e descreva os comandos que aprendeu a utilizar e guarde num ficheiro à sua conveniência.</h2>
+<pre>
+ta feito
+</pre>
+
+</body>
+</html>
