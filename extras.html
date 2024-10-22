@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body {
+            background-color: black;
+            color: white;
+            font-family: Arial, sans-serif;
+        }
+        pre {
+            background-color: #333;
+            border-left: 4px solid #00ff00; /* Verde para destacar */
+            padding: 10px;
+            overflow-x: auto; /* Adiciona rolagem horizontal se necessário */
+        }
+        h2 {
+            color: #00ff00; /* Verde para os títulos */
+        }
+
+        h1 {
+            color: #ffffff;
+            
+        }
+    </style>
+</head>
+<body>
+<center>
+<li><a href="index.html">Voltar</a></li>
+<h1>Comandos Extras</h1>
+</center>
+<h2>Permissoes ficheiros e pastas</h2>
+<pre>
+<img src="https://tekneed.com/wp-content/uploads/2024/06/Introduction-to-Linux-permissions.png"> </img>
+<img src="https://adamtheautomator.com/wp-content/uploads/2023/10/image-142-1024x72.png" width="40%"> </img>
+<code>chmod u-w user.txt</code>
+</pre>
+<h2>Trocar owner do arquivo</h2>
+<pre>
+<code>sudo chown bill new.txt</code>
+<img src="https://adamtheautomator.com/wp-content/uploads/2023/10/image-148.png" width="40%"> </img>
+</pre>
+<h2>Ver utilizadores logados no sistema</h2>
+<pre>
+<code>
+[h3ll@localhost ~]$ w
+20:10:41 up 26 min,  2 users,  load average: 0,00, 0,00, 0,00
+USER     TTY        LOGIN@   IDLE   JCPU   PCPU WHAT
+h3ll     tty1      20:01    9:13   0.00s  0.00s -bash
+h3ll     pts/0     20:08    1.00s  0.00s  0.00s w
+</code>
+</pre>
+<h2>/etc/passwd</h2>
+<pre>
+<img src="https://i0.wp.com/steflan-security.com/wp-content/uploads/2021/01/image-308.png?resize=616%2C198&ssl=1"> </img>
+<code>
+[h3ll@localhost ~]$ cat /etc/passwd | grep bash
+root:x:0:0:root:/root:/bin/bash
+h3ll:x:1000:1000:h3ll:/home/h3ll:/bin/bash
+</code>
+</pre>
+<h2>Criar user numa so linha</h2>
+<pre>
+<code>
+sudo useradd -m -s /bin/bash nome_do_utilizador && sudo passwd nome_do_utilizador
+</pre>
+</code>
+<h2>Apagar user</h2>
+<pre>
+<code>
+sudo userdel nome_do_utilizador
+</code>
+</pre>
+<h2>Verificar tipo de arquivo</h2>
+<pre>
+<code>
+file ficheiro.txt
+</code>
+</pre>
+<h2>Criar arquivo</h2>
+<pre>
+<code>
+touch novo_ficheiro.txt
+</code>
+</pre>
+<h2>Cria um ficheiro com conteudo</h2>
+<pre>
+<code>
+echo "conteúdo do ficheiro" > ficheiro.txt
+</code>
+<h2>Adicionar ao final do ficheiro:</h2>
+<code>
+echo "mais conteúdo" >> ficheiro.txt
+</code>
+</pre>
+<h2>Move ou renomeia ficheiros</h2>
+<pre>
+<code>
+mv ficheiro.txt novo_nome.txt
+</code>
+</pre>
+<h2>Ver tamanho de ficheiros</h2>
+<pre>
+<code>
+du -h ficheiro.txt
+</code>
+</pre>
+<h2>Copiar um ficheiro para um novo local</h2>
+<pre>
+<code>
+cp ficheiro_origem.txt /caminho/para/destino/
+</code>
+</pre> 
+<h2>Copiar e renomear um ficheiro</h2>
+<pre>
+<code>
+cp ficheiro_origem.txt ficheiro_novo.txt
+</code>
+</pre>
+<h2>Copiar um diretório inteiro</h2>
+<pre>
+<code>
+cp -r /caminho/do_diretorio_origem /caminho/para/destino/
+</code>
+</pre>
+<h2>Processos em execução para o usuário atual</h2>
+<pre>
+<code>
+ps
+</code>
+</pre>
+<h2>Listar todos os processos em execução no sistema</h2>
+<pre>
+<code>
+ps aux
+</code>
+</pre>
+<h2>Terminar o processo com o ID de processo</h2>
+<pre>
+<code>
+kill 1234
+</code>
+</pre>
+<h2>Encerrar processos com base em um nome</h2>
+<pre>
+<code>
+pkill firefox
+</code>
+</pre>
+<h2>Executa um comando em segundo plano</h2>
+<pre>
+<code>
+comando &
+</code>
+</pre>
+<h2>Retoma um processo suspenso em segundo plano</h2>
+<pre>
+<code>
+bg
+</code>
+</pre>
+<h2>Exibe todas as interfaces de rede</h2>
+<pre>
+<code>
+ip a
+</code>
+</pre>
+<h2>Mostra os endereços IP atribuídos à máquina</h2>
+<pre>
+<code>
+hostname -I
+</code>
+</pre>
+<h2>Informacoes do sistema</h2>
+<pre>
+<code>
+uname -a
+</code>
+</pre>
+<h2>Comprimir em TAR</h2>
+<pre>
+<code>
+tar -cvf nome_do_arquivo
+</code>
+</pre>
+<h2>Comprimir em GZIP</h2>
+<pre>
+<code>
+gzip nome_do_arquivo
+</code>
+</pre>
+<h2>Iniciar um servico de rede</h2>
+<pre>
+<code>
+sudo systemctl start nome_do_servico
+
+exemplo: sudo systemctl start httpd
+</code>
+</pre>
+<h2>Ver status do servico de rede</h2>
+<pre>
+<code>
+sudo systemctl status nome_do_servico
+</code>
+</pre>
+</body>
+</html>
